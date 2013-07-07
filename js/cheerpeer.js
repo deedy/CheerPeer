@@ -9,6 +9,8 @@ ref.parentNode.insertBefore(js, ref);
 }(document));
 
 
+
+
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '593762713978577', // App ID
@@ -24,6 +26,10 @@ window.fbAsyncInit = function() {
   // will be handled. 
   FB.Event.subscribe('auth.authResponseChange', function(response) {
     if (response.status === 'connected') {
+      $('#login-fb').animate({opacity: 0},1000);
+      setTimeout(function(){$('#login-fb').find('h3').text('Logged In')},1000);
+      setTimeout(function(){$('#login-fb').animate({opacity: 1},1000)},1000);
+
       testAPI(response.authResponse.accessToken, response.authResponse.userID);
     } else if (response.status === 'not_authorized') {
       FB.login();
@@ -38,6 +44,7 @@ function testAPI(accessToken, uID) {
 	console.log(accessToken);
 	console.log(userID);
 	console.log('Welcome!  Fetching your information.... ');
+	return;
 	// Only access 
 	var request = '/'+uID+'/inbox?message&access_token='+accessToken;
 	console.log(request);
@@ -61,6 +68,9 @@ function sentimentAnalysis(records) {
 			async: false
 		}).responseJSON;
 		console.log(i+"\t"+serverSideVals.from+"\t"+serverSideVals.to);
+		console.log(params['whathesentyou']);
+		console.log(params['whatyousenthim']);
+
 	}
 }
 

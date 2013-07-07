@@ -1,0 +1,8 @@
+
+.icon-heart:before { content: '\e801'; } /* '' */
+.icon-vcard:before { content: '\e803'; } /* '' */
+.icon-location:before { content: '\e802'; } /* '' */
+.icon-back-in-time:before { content: '\e804'; } /* '' */
+.icon-gauge:before { content: '\e800'; } /* '' */
+.icon-droplet:before { content: '\e806'; } /* '' */
+.icon-chart-line:before { content: '\e805'; } /* '' */
