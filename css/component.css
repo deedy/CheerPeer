@@ -391,3 +391,9 @@ li a #msgs #rcvr .fcbk-img img{
     -webkit-transform: rotate(1440deg) scale(1); 
   }
 }​
+
+.dp {
+	border-radius: 120px;
+	height: 120px;
+	width: 120px;
+}

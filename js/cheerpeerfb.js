@@ -100,6 +100,12 @@ function addRecordsToDom() {
 	}
 	for (var i in records) {
 		var template = $(template).clone();
+		if (i==0) {
+			$(template).find('a').addClass('carrot');
+		} else {
+			$(template).find('a').removeClass('carrot');
+		}
+		
 		addRecordToDom(template,records[i].friendname,records[i].from,records[i].to,records[i].id,records[i].fromscore,records[i].toscore)
 	}
 }

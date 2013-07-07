@@ -260,6 +260,9 @@ $('#login-fb').animate({opacity: 0},1000);
   setTimeout(function(){$('#login-fb').animate({opacity: 1},1000)},1000);
   $('#login-fb').click(function(){console.log('login');fblogin(); return false;});	
   $('#first').find('#analyze-button').remove();
+  if ($('#personal')) {
+  	$('#personal').remove();
+  }
 }
 
 function fblogin() {
@@ -298,6 +301,12 @@ window.fbAsyncInit = function() {
   FB.Event.subscribe('auth.authResponseChange', function(response) {
     if (response.status === 'connected') {
     	console.log('connected');
+    	FB.api('/me',function(a){
+    		console.log(a.name);
+    		$('#panel').append('<div id="personal"><img style="border-radius: 60px; height: 60px; width: 60px; margin-top: 10px" src=https://graph.facebook.com/'+a.id+'/picture><h3 class="cbp-ig-title" style="position: relative; border: 1px white solid; border-radius:4px; padding: 5px;">'+
+  	a.name+'</h3>');
+    		$('#panel').append()
+    	});
       // testAPI(response.authResponse.accessToken, response.authResponse.userID);
     } else {
     	console.log('out');
