@@ -16,64 +16,66 @@
     	<script src="js/jquery.min.js"></script>
 		<script src="js/modernizr.custom.js"></script>
 		<script src="js/cheerpeer.js"></script>
-		<script>
-          function fblogin() {
-          	console.log('')
-            FB.login(function(response) {
-            }, {scope:'read_mailbox'});
-          }
-        </script>
+		<script src="js/date.format.js"></script>
+		<script src="js/chart.js"></script>
 	</head>
 	<body>
 		<div class="container">
 			<header class="clearfix">
 				<h1>CheerPeer</h1>
-				
 			</header>	
 			<div class="main">
 				<ul class="cbp-ig-grid">
 					<li id="first">
-						<a href="#" class="belizehole">
+						<a id="panel" href="#" class="belizehole">
 							
-							<a id="login-fb" href="#" onclick="fblogin();return false;"><h3 class="cbp-ig-title" style="margin-top: -250px; border: 1px white solid; border-radius:4px; padding-bottom: 20px;"><i class="icon-vcard"></i>Log in with Facebook</h3></a>
+							<a id="login-fb" style="opacity:0;" href="#"><h3 class="cbp-ig-title" style="margin-top: -250px; border: 1px white solid; border-radius:4px; padding-bottom: 20px;"></h3></a>
 							<div id="fb-root"></div>
 						</a>
 					</li>
 					<li style="">
-						<a href="#" class="carrot">
-							<h1>00</h1>
-							<h3 class="cbp-ig-title"><i class="icon-heart"></i>Heart Rate</h3>
-							<span class="cbp-ig-category">{{elevated}}</span>
+						<a id="hr-panel" href="#" class="carrot">
+							<h1 id="hr">00</h1>
+							<h2 style="margin-top: -20px; font-weight: 100;">BPM</h2>
+							<h3  class="cbp-ig-title"><i class="icon-heart"></i>Heart Rate</h3>
+							<span id="hr-state" class="cbp-ig-category"></span>
 						</a>
 					</li>
 					<li style="">
-						<a href="#" class="alizarin">
-							<h1>00</h1>
+						<a id="bp-panel" href="#" class="alizarin">
+							<h1 id="bp">00</h1>
+							<h2 style="margin-top: -20px; font-weight: 100;">mm Hg</h2>
 							<h3 class="cbp-ig-title"><i class="icon-gauge"></i>Blood Pressure</h3>
-							<span class="cbp-ig-category">{{normal/whatever}}</span>
+							<span id="bp-state" class="cbp-ig-category"></span>
 						</a>
 					</li>
+
 					<li style="">
-						<a href="#" class="sunflower">
-							<h1>00</h1>
-							<h3 class="cbp-ig-title"><i class="icon-chart-line"></i>Active Minutes</h3>
-							<span class="cbp-ig-category">{{more/less than avg}}</span>
-						</a>
-					</li>
-					<li style="">
-						<a href="#" class="emerland">
-							<h1>00</h1>
-							<h3 class="cbp-ig-title"><i class="icon-back-in-time"></i>Sleep Cycles</h3>
-							<span class="cbp-ig-category">{{Good/Bad}}</span>
-						</a>
-					</li>
-					<li style="">
-						<a href="#" class="amethyst">
-							<h1>00</h1>
+						<a id="bg-panel"  href="#" class="amethyst">
+							<h1 id="bg">00</h1>
+							<h2 style="margin-top: -20px; font-weight: 100;">mg/dL</h2>
 							<h3 class="cbp-ig-title"><i class="icon-droplet"></i>Blood Glucose</h3>
-							<span class="cbp-ig-category">{{Normal/etc.}}</span>
+							<span id="bg-state" class="cbp-ig-category"></span>
 						</a>
 					</li>
+					
+					<li style="">
+						<a id="sc-panel" href="#" class="emerland">
+							<h1 id="sc">00</h1>
+							<h3 class="cbp-ig-title"><i class="icon-back-in-time"></i>Sleep Cycle Duration</h3>
+							<span id="sc-state" class="cbp-ig-category"></span>
+						</a>
+					</li>
+					<li style="">
+						<a id="am-panel" href="#" class="sunflower">
+							<h1 style="visibility:hidden;">00</h1>
+							<div id="canvas"><canvas id="am" width="417" height="200" style="position: relative; margin-top: -200px;"></canvas></div>
+							<h4 style="margin-top: -0px;"><span style="color: #7f8c8d;  font-weight: 200;">Light</span> : <span style="color: #2980b9;  font-weight: 500;">Moderate</span> : <span style="color: #2c3e50;  font-weight: 800;">Vigorous</span></h4>
+							<h3 class="cbp-ig-title" style="margin-top: -40px;"><i class="icon-chart-line"></i>Active Minutes</h3>
+							<span id="am-state" class="cbp-ig-category" style="font-size: 20px;"></span>
+						</a>
+					</li>
+					
 				</ul>
 			</div>
 		</div>

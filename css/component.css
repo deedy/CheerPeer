@@ -122,6 +122,7 @@
 	font-size: 1em;
 	letter-spacing: 1px;
 	color: #fff;
+	width: 200px;
 	/*-webkit-transform: translateY(10px);
 	-moz-transform: -moz-translateY(10px);
 	-ms-transform: -ms-translateY(10px);
@@ -266,7 +267,127 @@ ul.cbp-ig-grid li#first a {
 
 }
 
+a h1{
+	padding-top:30px;
+}
+
 li#first a {
 	padding-left: 20px;
 padding-right: 20px;
 }
+
+li a #msgs #sndr  {
+	padding-top: 20px;
+}
+
+li a #msgs #sndr span.fcbk-msg{
+float: right;
+margin-top: 10px;
+background-color: #7f8c8d;
+padding: 10px;
+width: 300px;
+overflow-y: scroll;
+overflow-x: hidden;
+height: 120px;
+word-wrap: break-word;
+display: inline-block;
+margin-right: -20px;
+border: 2px white solid;
+
+margin-left: 0px;
+}
+li a #msgs #sndr .fcbk-img img{
+	height: 120px;
+	width: 120px;
+	border-radius: 120px;
+	float: left;
+	padding: 0;
+	margin-left: -50px;
+}
+
+li a #msgs #rcvr  {
+	width: 80%;
+	padding-top: 20px;
+}
+
+li a #msgs #rcvr span.fcbk-msg{
+	float: left;
+margin-top: 90px;
+background-color: #7f8c8d;
+padding: 10px;
+width: 300px;
+overflow-y: scroll;
+overflow-x: hidden;
+height: 120px;
+word-wrap: break-word;
+display: inline-block;
+margin-right: -70px;
+margin-left: -50px;
+border: 2px white solid;
+
+}
+li a #msgs #rcvr .fcbk-img img{
+	height: 120px;
+	width: 120px;
+	border-radius: 120px;
+	float: right;
+	margin-right: -95px;
+	margin-top: 90px;
+	display: inline-block;
+	z-index: 999;
+}
+
+#fcbk-data {
+	padding-top: 25px;
+}
+
+#spinner.active {
+    display: block;
+}
+#spinner {
+    display: none;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    top: 40%;
+    left: 48%;
+    z-index: 1;
+}
+.spinner_ball {
+    position: absolute;
+    display: block;
+    background-color: white;
+    left: 24px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+}
+#ball_1 {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.3, 0.9, 0.9);
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 6px 30px;
+}
+#ball_2 {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.5, 0.9, 0.9);
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 6px 30px;
+}
+#ball_3 {
+    -webkit-animation-timing-function: cubic-bezier(0.5, 0.7, 0.9, 0.9);
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 6px 30px;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+  }
+  100% { 
+    -webkit-transform: rotate(1440deg) scale(1); 
+  }
+}​
